@@ -12,13 +12,13 @@ app=FastAPI(title="Binomi API",version="1.0.0")
 app.add_middleware(CORSMiddleware,allow_origins=[FRONTEND_URL,"http://localhost:5173","http://127.0.0.1:5173"],allow_methods=["*"],allow_headers=["*"])
 
 class EnterRequest(BaseModel):
-    name:str=Field(min_length=1,max_length=80); language:str="en"
+    name:str=Field(min_length=1,max_length=80); language:str="en"; user_id:str|None=None
 class QuestionnaireRequest(BaseModel):
     questionnaire:dict[str,Any]; language:str="en"
 class MatchRequest(BaseModel):
     user_id:str; candidate_id:str; language:str="en"
 class CloneRequest(BaseModel):
-    user_id:str; message:str; history:list[dict[str,str]]=[]; language:str="en"; session_id:str|None=None
+    user_id:str; message:str; history:list[dict[str,Any]]=[]; language:str="en"; session_id:str|None=None
 
 def public_user(user,q=None):
     q=q or find_one("questionnaires",user_id=user["id"])
@@ -32,10 +32,12 @@ def questionnaire_schema(language="en"): return {"fields":schema(language)}
 
 @app.post("/api/users/enter")
 def enter(req:EnterRequest):
-    name=req.name.strip(); existing=find_one("users",name=name)
-    if existing:
-        existing=update("users",existing["id"],{"language":req.language,"last_seen":datetime.utcnow().isoformat()+"Z"}) or existing
-        return public_user(existing)
+    name=req.name.strip()
+    if req.user_id:
+        existing=get("users",req.user_id)
+        if existing:
+            existing=update("users",existing["id"],{"name":name,"language":req.language,"last_seen":datetime.utcnow().isoformat()+"Z"}) or existing
+            return public_user(existing)
     return public_user(create("users",{"name":name,"language":req.language,"created_at":datetime.utcnow().isoformat()+"Z"}))
 
 @app.get("/api/users/{user_id}")
@@ -64,6 +66,7 @@ def candidates(user_id):
 
 @app.post("/api/matches/run")
 def run_match(req:MatchRequest):
+    if req.user_id==req.candidate_id: raise HTTPException(400,"A user cannot match with themselves")
     ua,ub=get("users",req.user_id),get("users",req.candidate_id)
     qa,qb=find_one("questionnaires",user_id=req.user_id),find_one("questionnaires",user_id=req.candidate_id)
     if not ua or not ub or not qa or not qb: raise HTTPException(400,"Both users must complete questionnaires")
@@ -103,9 +106,9 @@ def clone_chat(req:CloneRequest):
     sid=req.session_id
     if not sid: sid=create("negotiation_logs",{"type":"clone_chat","user_id":req.user_id,"conversation":[],"created_at":datetime.utcnow().isoformat()+"Z"})["id"]
     log=get("negotiation_logs",sid)
-    if log:
-        c=log.get("conversation",[]); c += [{"role":"user","content":req.message,"timestamp":datetime.utcnow().isoformat()+"Z"},{"role":"assistant","content":reply,"timestamp":datetime.utcnow().isoformat()+"Z"}]
-        update("negotiation_logs",sid,{"conversation":c})
+    if not log: raise HTTPException(404,"Clone chat session not found")
+    c=log.get("conversation",[]); c += [{"role":"user","content":req.message,"timestamp":datetime.utcnow().isoformat()+"Z"},{"role":"assistant","content":reply,"timestamp":datetime.utcnow().isoformat()+"Z"}]
+    update("negotiation_logs",sid,{"conversation":c})
     return {"reply":reply,"session_id":sid}
 
 if __name__=="__main__":
