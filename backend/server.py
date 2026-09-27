@@ -102,7 +102,8 @@ def clone_intro(user_id):
 def clone_chat(req:CloneRequest):
     u=get("users",req.user_id); q=find_one("questionnaires",user_id=req.user_id)
     if not u or not q: raise HTTPException(400,"Complete your questionnaire first")
-    reply=clone_turn(u["name"],q["data"],"you",req.history,req.language,len(req.history)//2+1)
+    chat_history=req.history+[{"role":"user","content":req.message}]
+    reply=clone_turn(u["name"],q["data"],"you",chat_history,req.language,len(chat_history)//2+1)
     sid=req.session_id
     if not sid: sid=create("negotiation_logs",{"type":"clone_chat","user_id":req.user_id,"conversation":[],"created_at":datetime.utcnow().isoformat()+"Z"})["id"]
     log=get("negotiation_logs",sid)
