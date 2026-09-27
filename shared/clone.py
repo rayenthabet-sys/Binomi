@@ -31,22 +31,56 @@ ACP/1.0: represent only the supplied profile, never invent preferences, speak in
 PROFILE:
 {profile_text(name,q)}"""
 
-def fallback(name,q,other,turn):
-    lines=[f"Hi {other}, I'm {name}. I'm looking in {q.get('city','the area')} with a budget of {q.get('budget_min','?')}–{q.get('budget_max','?')} TND.",
-           f"I prefer {q.get('cleanliness','balanced')} cleanliness, {q.get('noise','balanced')} noise, and I'm a {q.get('sleep','normal')} sleeper.",
-           f"I'm {q.get('social','balanced')} socially. Guests are {q.get('guests','sometimes')}, and home work/study is {q.get('work_home','sometimes')}.",
-           f"My deal-breakers are {q.get('dealbreakers','none stated')}. I can compromise on {q.get('compromise','minor routines')}.",
-           "Let's compare our remaining differences honestly and see what is workable."]
-    return lines[min(turn-1,len(lines)-1)]
+def fallback(name,q,other,turn,language="en"):
+    if language=="fr":
+        lines=[f"Bonjour {other}, je suis le clone de {name}. Je cherche à {q.get('city','Tunis')} avec un budget de {q.get('budget_min','?')}–{q.get('budget_max','?')} TND.",
+        f"Je préfère une propreté {q.get('cleanliness','équilibrée')} et un niveau sonore {q.get('noise','modéré')}. Mon rythme est {q.get('sleep','normal')}.",
+        f"Je suis plutôt {q.get('social','équilibré')} socialement, et les invités sont {q.get('guests','occasionnels')}.",
+        f"Mes priorités sont {q.get('priorities','le confort et le budget')}.",
+        f"Mes points non négociables sont : {q.get('dealbreakers','aucun indiqué')}.",
+        f"Je peux faire des compromis sur : {q.get('compromise','les petits détails du quotidien')}.",
+        f"Pour le travail ou les études à domicile, je suis : {q.get('work_home','parfois')}.",
+        "Comparons nos différences restantes et cherchons un arrangement réaliste."]
+    elif language=="ar":
+        lines=[f"مرحباً {other}، أنا نسخة {name}. أبحث عن سكن في {q.get('city','تونس')} بميزانية {q.get('budget_min','?')}–{q.get('budget_max','?')} دينار شهرياً.",
+        f"أفضل مستوى نظافة {q.get('cleanliness','متوازن')} وضجيجاً {q.get('noise','متوسطاً')}، ونظام نومي {q.get('sleep','عادي')}.",
+        f"أنا شخص {q.get('social','متوازن')} اجتماعياً، والضيوف بالنسبة لي {q.get('guests','أحياناً')}.",
+        f"أهم أولوياتي هي: {q.get('priorities','الراحة والميزانية')}.",
+        f"الأمور غير القابلة للتفاوض: {q.get('dealbreakers','لا يوجد شيء محدد')}.",
+        f"يمكنني التنازل في: {q.get('compromise','تفاصيل الحياة اليومية البسيطة')}.",
+        f"العمل أو الدراسة من المنزل بالنسبة لي: {q.get('work_home','أحياناً')}.",
+        "لنقارن اختلافاتنا ونبحث عن حل واقعي يناسب الطرفين."]
+    else:
+        lines=[f"Hi {other}, I'm {name}'s clone. I'm looking in {q.get('city','the area')} with a budget of {q.get('budget_min','?')}–{q.get('budget_max','?')} TND.",
+        f"I prefer {q.get('cleanliness','balanced')} cleanliness and {q.get('noise','balanced')} noise. My sleep schedule is {q.get('sleep','normal')}.",
+        f"I'm {q.get('social','balanced')} socially, and guests are {q.get('guests','sometimes')}.",
+        f"My top priorities are {q.get('priorities','a comfortable home and a workable budget')}.",
+        f"My deal-breakers are: {q.get('dealbreakers','none stated')}.",
+        f"I can compromise on: {q.get('compromise','minor day-to-day details')}.",
+        f"Working or studying from home is: {q.get('work_home','sometimes')}.",
+        "Let's compare our remaining differences and find a realistic arrangement."]
+    return lines[min(max(turn-1,0),len(lines)-1)]
+
+def _conversation_context(conversation,other):
+    parts=[]
+    for m in conversation[-8:]:
+        speaker=m.get("speaker")
+        content=m.get("message")
+        if speaker is None: speaker=other if m.get("role","user")=="user" else "clone"
+        if content is None: content=m.get("content","")
+        if content: parts.append(f"{speaker}: {content}")
+    return "\n".join(parts)
 
 def clone_turn(name,q,other,conversation,language,turn):
-    context="\n".join(f"{m['speaker']}: {m['message']}" for m in conversation[-8:])
-    prompt=f"""You are {name}'s clone. The other clone is {other}. This is turn {turn}.
+    try:
+        context=_conversation_context(conversation,other)
+        prompt=f"""You are {name}'s clone. The other clone is {other}. This is turn {turn}.
 Conversation so far:
 {context or '(start)'}
 Reply in 2–4 natural sentences. Discuss compatibility and ask one useful question."""
-    try: return chat([{"role":"system","content":system_prompt(name,q,language)},{"role":"user","content":prompt}],0.4,260)
-    except Exception: return fallback(name,q,other,turn)
+        return chat([{"role":"system","content":system_prompt(name,q,language)},{"role":"user","content":prompt}],0.4,260)
+    except Exception:
+        return fallback(name,q,other,turn,language)
 
 def hard_conflicts(a,b):
     c=[]
