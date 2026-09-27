@@ -20,6 +20,15 @@ Data files: users.json, questionnaires.json, matches.json, negotiation_logs.json
 
 There is no external database. JSON writes use atomic replacement and file locking. Entities use UUIDs and explicit ID references.
 
+##For the jury
+
+SupplyzPro Award
+SupplyzPro → why the project fits → concrete evidence → where to see it → country/eligibility fit
+SupplyzPro → The project does not currently demonstrate the “Find the Hidden Failures” use case required by SupplyzPro. Its AI agents are designed for roommate compatibility: they surface deal-breakers, negotiate preferences, and produce a five-dimension compatibility verdict, rather than detecting, grouping, and prioritizing operational failures.
+Concrete evidence → The project documentation shows early deal-breaker detection within the first three turns and structured AI negotiation, but it does not provide evidence of failure detection, failure grouping, or evidence-based prioritization. Where to see it: project PDF, pages 3–4, sections “User value” and “Differentiation”; no repository or video evidence was provided in the submitted material. Country/eligibility fit: Not confirmed from the provided materials — do not claim eligibility.
+Important: I would not submit a stronger SupplyzPro claim unless you actually have a repository/video showing those three capabilities. The PDF supports the roommate-matching claims, but not the SupplyzPro “hidden failures” criteria. aa hotou fel readme
+
+
 ## Run locally
 
 Backend:
@@ -43,4 +52,7 @@ AI represents each participant through a profile-specific clone, conducts the mu
 
 Deterministic code remains responsible for hard deal-breakers and the final compatibility guard. The model cannot override an explicit hard conflict.
 
-English, French, and Arabic are supported, with Tunisian locations and TND budgets.
+English, French, and Arabic are supported, with Tunisian locations and TND budgets. 
+
+
+
