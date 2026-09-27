@@ -11,7 +11,7 @@ def schema(language="en"):
     for key,typ in [("city","select"),("neighborhood","text"),("occupation","select"),("gender","select"),("roommate_gender","select"),("budget_min","number"),("budget_max","number"),("move_in","select"),("room_type","select"),("smoking","select"),("pets","select"),("cleanliness","select"),("noise","select"),("sleep","select"),("guests","select"),("social","select"),("work_home","select"),("drinking","select"),("lease","select"),("hobbies","textarea"),("dealbreakers","textarea"),("priorities","textarea"),("compromise","textarea")]:
         f={"key":key,"type":typ,"label":LABELS[language][key]}
         if key=="city": f["options"]=CITIES
-        elif key in OPTIONS: f["options"]=OPTIONS[key] if language=="en" else TRANSLATED[language].get(key,OPTIONS[key])
+        elif key in OPTIONS: f["options"]=OPTIONS[key] if language=="en" else [{"value":v,"label":l} for v,l in zip(OPTIONS[key],TRANSLATED[language].get(key,OPTIONS[key]))]
         if typ=="number": f.update(min=300,max=5000)
         fields.append(f)
     return fields
