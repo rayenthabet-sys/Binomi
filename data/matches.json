@@ -218,5 +218,67 @@
     "negotiation_log_id": "bf7b08d9-6b68-4b1f-a9ba-0d5a320769ae",
     "created_at": "2026-09-27T14:50:29.243173Z",
     "id": "81866aee-dc90-4e8a-ad74-f07f3a2c8db3"
+  },
+  {
+    "user_a_id": "f3ed22a3-674d-41e7-b08e-ec0907eb858f",
+    "user_b_id": "32a8e695-5d65-45a9-9d50-135432673ed1",
+    "status": "incompatible",
+    "score": 53,
+    "scores": {
+      "overall": 53,
+      "finances": 50,
+      "lifestyle": 54,
+      "personality": 72,
+      "logistics": 45
+    },
+    "summary": "Rayen and Ahmed T. are incompatible due to fundamental conflicts in location (Ben Arous vs. Tunis), smoking policies (Rayen is okay with smokers, Ahmed requires a non-smoking household), and lease duration (Rayen needs 3-6 months, Ahmed requires 1 year). Both parties confirmed these are deal-breakers and agreed to end the conversation.",
+    "positives": [
+      "Both parties were upfront and honest about their non-negotiables early in the conversation.",
+      "The incompatibility was identified quickly, saving both parties time.",
+      "The tone remained respectful and professional throughout the interaction."
+    ],
+    "frictions": [
+      "Hard conflict on smoking: Rayen is comfortable with smokers, while Ahmed has a strict non-smoking requirement.",
+      "Hard conflict on lease duration: Rayen requires a short-term (3-6 months) arrangement, while Ahmed requires a 1-year lease.",
+      "Hard conflict on location: Rayen is based in Ben Arous, while Ahmed is in Tunis (Centre Urbain Nord)."
+    ],
+    "hard_conflicts": [
+      "Different target cities: Ben Arous vs Tunis"
+    ],
+    "compromise": "No compromise was possible or attempted due to the presence of hard conflicts on smoking, lease duration, and location.",
+    "negotiation_log_id": "7d4186bd-801d-499d-b474-7a2301fa602f",
+    "created_at": "2026-09-27T15:12:36.416061Z",
+    "id": "9dd33171-b33b-4e21-a5ae-33f080378efb"
+  },
+  {
+    "user_a_id": "f3ed22a3-674d-41e7-b08e-ec0907eb858f",
+    "user_b_id": "32a8e695-5d65-45a9-9d50-135432673ed1",
+    "status": "incompatible",
+    "score": 53,
+    "scores": {
+      "overall": 53,
+      "finances": 50,
+      "lifestyle": 54,
+      "personality": 72,
+      "logistics": 45
+    },
+    "summary": "Rayen and Ahmed T. concluded their conversation after identifying fundamental incompatibilities. Rayen is seeking a shared room in Ben Arous with a 3-6 month move-in timeline, while Ahmed requires a private room in Tunis (Centre Urbain Nord) within one month. Both parties agreed to part ways respectfully.",
+    "positives": [
+      "Both parties communicated honestly and respectfully about their mismatched needs.",
+      "The conversation was efficient, with both parties quickly acknowledging the incompatibility.",
+      "Both expressed good wishes for the other's future housing search."
+    ],
+    "frictions": [
+      "Hard conflict on location: Ben Arous vs. Tunis.",
+      "Hard conflict on room type: Shared room vs. Private room.",
+      "Hard conflict on timeline: 3-6 months vs. Within 1 month."
+    ],
+    "hard_conflicts": [
+      "Different target cities: Ben Arous vs Tunis"
+    ],
+    "compromise": "No compromise was reached or attempted due to the fundamental nature of the conflicts.",
+    "negotiation_log_id": "de60c221-be30-48f0-a15d-1826d5e2e8ad",
+    "created_at": "2026-09-27T15:15:30.896626Z",
+    "id": "a3465d41-30e7-4f30-8c19-4e51eb49c2e6"
   }
 ]

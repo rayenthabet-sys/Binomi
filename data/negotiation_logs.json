@@ -869,5 +869,247 @@
     },
     "created_at": "2026-09-27T14:50:29.236262Z",
     "id": "bf7b08d9-6b68-4b1f-a9ba-0d5a320769ae"
+  },
+  {
+    "type": "clone_negotiation",
+    "user_a_id": "f3ed22a3-674d-41e7-b08e-ec0907eb858f",
+    "user_b_id": "32a8e695-5d65-45a9-9d50-135432673ed1",
+    "participants": [
+      "Rayen",
+      "Ahmed T."
+    ],
+    "conversation": [
+      {
+        "turn": 1,
+        "phase": "introduction",
+        "speaker_id": "f3ed22a3-674d-41e7-b08e-ec0907eb858f",
+        "speaker": "Rayen",
+        "message": "Hi Ahmed, I’m Rayen from Ben Arous and I’m looking for a shared room for the next 3–6 months. Since I’m flexible on location and okay with smokers, I’m hoping to find someone who values a relaxed atmosphere. What’s your ideal living situation regarding noise levels and cleanliness?",
+        "timestamp": "2026-09-27T15:12:33.183812Z"
+      },
+      {
+        "turn": 2,
+        "phase": "introduction",
+        "speaker_id": "32a8e695-5d65-45a9-9d50-135432673ed1",
+        "speaker": "Ahmed T.",
+        "message": "I appreciate your flexibility on location, but I need to be upfront that I require a strictly non-smoking household and a very tidy environment, which might clash with your preference for a relaxed atmosphere. Since I prioritize a quiet space for my coding and reading, I’m looking for a roommate who is mostly quiet and respects that need for calm. Given your shorter 3–6 month lease, are you open to a 1-year commitment, or would you prefer a more flexible arrangement?",
+        "timestamp": "2026-09-27T15:12:33.512940Z"
+      },
+      {
+        "turn": 3,
+        "phase": "lifestyle",
+        "speaker_id": "f3ed22a3-674d-41e7-b08e-ec0907eb858f",
+        "speaker": "Rayen",
+        "message": "I appreciate your honesty, but a strictly non-smoking environment is a deal-breaker for me since I am comfortable with smokers, so that specific requirement makes us incompatible. Regarding the lease, I am looking for a 3–6 month arrangement, so a 1-year commitment would be too long for my current plans. Do you have any flexibility on the lease duration, or is the 1-year term a strict requirement for you?",
+        "timestamp": "2026-09-27T15:12:33.866272Z"
+      },
+      {
+        "turn": 4,
+        "phase": "lifestyle",
+        "speaker_id": "32a8e695-5d65-45a9-9d50-135432673ed1",
+        "speaker": "Ahmed T.",
+        "message": "Since smoking is a non-negotiable deal-breaker for me and your lease preference doesn’t align with my 1-year requirement, I’m afraid we aren’t a good match for a shared living arrangement. I do, however, have a flexible policy for weekend guest visits if that’s ever relevant to your plans. Do you have any other specific housing preferences or constraints I should be aware of?",
+        "timestamp": "2026-09-27T15:12:34.205332Z"
+      },
+      {
+        "turn": 5,
+        "phase": "negotiation",
+        "speaker_id": "f3ed22a3-674d-41e7-b08e-ec0907eb858f",
+        "speaker": "Rayen",
+        "message": "It sounds like we are indeed incompatible due to our opposing views on smoking and the significant mismatch in lease duration. I appreciate you being upfront about your non-negotiables, as it saves us both time. Since we are moving in different directions, could you recommend any other profiles or areas in Ben Arous that might better suit a flexible, short-term arrangement?",
+        "timestamp": "2026-09-27T15:12:34.531401Z"
+      },
+      {
+        "turn": 6,
+        "phase": "negotiation",
+        "speaker_id": "32a8e695-5d65-45a9-9d50-135432673ed1",
+        "speaker": "Ahmed T.",
+        "message": "I’m glad we cleared up the incompatibility quickly, as it saves us both valuable time. While I can’t point you to specific profiles, the Centre Urbain Nord area often has more options for short-term rentals if you’re open to looking slightly further from Ben Arous. Since you’re flexible on location, would you be open to considering a private room in a quieter, non-smoking household in exchange for a shorter lease term?",
+        "timestamp": "2026-09-27T15:12:34.961821Z"
+      },
+      {
+        "turn": 7,
+        "phase": "conclusion",
+        "speaker_id": "f3ed22a3-674d-41e7-b08e-ec0907eb858f",
+        "speaker": "Rayen",
+        "message": "I appreciate the suggestion, but since I am comfortable with smokers and need a 3–6 month lease, a non-smoking household would still be a deal-breaker for me. It seems we have fundamentally different needs regarding both the environment and the duration of the stay. Given that we are incompatible, are there any other specific housing preferences or constraints I should be aware of?",
+        "timestamp": "2026-09-27T15:12:35.281989Z"
+      },
+      {
+        "turn": 8,
+        "phase": "conclusion",
+        "speaker_id": "32a8e695-5d65-45a9-9d50-135432673ed1",
+        "speaker": "Ahmed T.",
+        "message": "It is clear that our fundamental needs regarding smoking and lease duration are incompatible, so I do not see a viable path for us to live together. Since we have confirmed we are not a match, I will respect your time and close this conversation here. Is there anything else you need before we end the chat?",
+        "timestamp": "2026-09-27T15:12:35.597633Z"
+      }
+    ],
+    "analysis": {
+      "status": "incompatible",
+      "scores": {
+        "overall": 53,
+        "finances": 50,
+        "lifestyle": 54,
+        "personality": 72,
+        "logistics": 45
+      },
+      "hard_conflicts": [
+        "Different target cities: Ben Arous vs Tunis"
+      ],
+      "summary": "Rayen and Ahmed T. are incompatible due to fundamental conflicts in location (Ben Arous vs. Tunis), smoking policies (Rayen is okay with smokers, Ahmed requires a non-smoking household), and lease duration (Rayen needs 3-6 months, Ahmed requires 1 year). Both parties confirmed these are deal-breakers and agreed to end the conversation.",
+      "positives": [
+        "Both parties were upfront and honest about their non-negotiables early in the conversation.",
+        "The incompatibility was identified quickly, saving both parties time.",
+        "The tone remained respectful and professional throughout the interaction."
+      ],
+      "frictions": [
+        "Hard conflict on smoking: Rayen is comfortable with smokers, while Ahmed has a strict non-smoking requirement.",
+        "Hard conflict on lease duration: Rayen requires a short-term (3-6 months) arrangement, while Ahmed requires a 1-year lease.",
+        "Hard conflict on location: Rayen is based in Ben Arous, while Ahmed is in Tunis (Centre Urbain Nord)."
+      ],
+      "compromise": "No compromise was possible or attempted due to the presence of hard conflicts on smoking, lease duration, and location."
+    },
+    "created_at": "2026-09-27T15:12:36.407276Z",
+    "id": "7d4186bd-801d-499d-b474-7a2301fa602f"
+  },
+  {
+    "type": "clone_negotiation",
+    "user_a_id": "f3ed22a3-674d-41e7-b08e-ec0907eb858f",
+    "user_b_id": "32a8e695-5d65-45a9-9d50-135432673ed1",
+    "participants": [
+      "Rayen",
+      "Ahmed T."
+    ],
+    "conversation": [
+      {
+        "turn": 1,
+        "phase": "introduction",
+        "speaker_id": "f3ed22a3-674d-41e7-b08e-ec0907eb858f",
+        "speaker": "Rayen",
+        "message": "Hi Ahmed, I’m Rayen. I’m looking to move in within the next 3 to 6 months and I’m flexible on location around Ben Arous, so I’d love to hear more about your ideal setup. What is your preferred budget range for rent?",
+        "timestamp": "2026-09-27T15:15:26.939118Z"
+      },
+      {
+        "turn": 2,
+        "phase": "introduction",
+        "speaker_id": "32a8e695-5d65-45a9-9d50-135432673ed1",
+        "speaker": "Ahmed T.",
+        "message": "Hi Rayen, I’m glad we’re connecting, though my timeline is a bit tighter as I need to move within the next month. I’m looking for a private room in the Centre Urbain Nord with a budget between 700 and 1100 TND, and a quiet, very tidy environment is essential for my work. Since you’re flexible on location, would you be open to considering a place in Tunis proper rather than Ben Arous?",
+        "timestamp": "2026-09-27T15:15:27.313449Z"
+      },
+      {
+        "turn": 3,
+        "phase": "lifestyle",
+        "speaker_id": "f3ed22a3-674d-41e7-b08e-ec0907eb858f",
+        "speaker": "Rayen",
+        "message": "I appreciate you sharing those details, but I need to be transparent that I am specifically looking for a shared room, so that aspect of our preferences doesn’t align. Additionally, my timeline is 3–6 months out, which is quite different from your need to move within the next month. Given these significant differences in room type and timing, do you have any other potential matches you’d like to discuss, or should we wrap up here?",
+        "timestamp": "2026-09-27T15:15:27.629225Z"
+      },
+      {
+        "turn": 4,
+        "phase": "lifestyle",
+        "speaker_id": "32a8e695-5d65-45a9-9d50-135432673ed1",
+        "speaker": "Ahmed T.",
+        "message": "I appreciate your honesty, Rayen; since you need a shared room and I require a private one, it’s clear we aren’t a match. I’ll definitely move on to other profiles that align better with my specific needs. Just for my own reference, are you strictly looking for a roommate to split a single room, or would you consider a private room in a larger shared apartment?",
+        "timestamp": "2026-09-27T15:15:28.157030Z"
+      },
+      {
+        "turn": 5,
+        "phase": "negotiation",
+        "speaker_id": "f3ed22a3-674d-41e7-b08e-ec0907eb858f",
+        "speaker": "Rayen",
+        "message": "To clarify, I am specifically looking to share a room with another person, so a private room in a larger apartment wouldn't work for me. Since our room type preferences and move-in timelines are fundamentally misaligned, I think it’s best we part ways here. I wish you the best of luck in finding a quiet, private space in Tunis that fits your budget.",
+        "timestamp": "2026-09-27T15:15:28.497141Z"
+      },
+      {
+        "turn": 6,
+        "phase": "negotiation",
+        "speaker_id": "32a8e695-5d65-45a9-9d50-135432673ed1",
+        "speaker": "Ahmed T.",
+        "message": "It is clear we are not a compatible match given our fundamental differences in room type and move-in timelines, so I will respectfully conclude our conversation here. I wish you the best of luck in finding the shared room in Ben Arous that fits your needs.",
+        "timestamp": "2026-09-27T15:15:28.898965Z"
+      },
+      {
+        "turn": 7,
+        "phase": "conclusion",
+        "speaker_id": "f3ed22a3-674d-41e7-b08e-ec0907eb858f",
+        "speaker": "Rayen",
+        "message": "It’s been a pleasure, and I completely agree that our needs are too different to make this work. I hope you find the perfect private space in Tunis soon. Since we’re wrapping up, is there anything specific about the Ben Arous area you were curious about before you go?",
+        "timestamp": "2026-09-27T15:15:29.246250Z"
+      },
+      {
+        "turn": 8,
+        "phase": "conclusion",
+        "speaker_id": "32a8e695-5d65-45a9-9d50-135432673ed1",
+        "speaker": "Ahmed T.",
+        "message": "It’s been a pleasure connecting with you, Rayen, but as we’ve established, our needs are fundamentally misaligned, so I’ll be moving on to find a better fit. I don’t have any specific questions about Ben Arous since my search is strictly focused on the Centre Urbain Nord. I wish you the best of luck in your search for a shared room.",
+        "timestamp": "2026-09-27T15:15:29.665674Z"
+      }
+    ],
+    "analysis": {
+      "status": "incompatible",
+      "scores": {
+        "overall": 53,
+        "finances": 50,
+        "lifestyle": 54,
+        "personality": 72,
+        "logistics": 45
+      },
+      "hard_conflicts": [
+        "Different target cities: Ben Arous vs Tunis"
+      ],
+      "summary": "Rayen and Ahmed T. concluded their conversation after identifying fundamental incompatibilities. Rayen is seeking a shared room in Ben Arous with a 3-6 month move-in timeline, while Ahmed requires a private room in Tunis (Centre Urbain Nord) within one month. Both parties agreed to part ways respectfully.",
+      "positives": [
+        "Both parties communicated honestly and respectfully about their mismatched needs.",
+        "The conversation was efficient, with both parties quickly acknowledging the incompatibility.",
+        "Both expressed good wishes for the other's future housing search."
+      ],
+      "frictions": [
+        "Hard conflict on location: Ben Arous vs. Tunis.",
+        "Hard conflict on room type: Shared room vs. Private room.",
+        "Hard conflict on timeline: 3-6 months vs. Within 1 month."
+      ],
+      "compromise": "No compromise was reached or attempted due to the fundamental nature of the conflicts."
+    },
+    "created_at": "2026-09-27T15:15:30.885483Z",
+    "id": "de60c221-be30-48f0-a15d-1826d5e2e8ad"
+  },
+  {
+    "type": "clone_chat",
+    "user_id": "f3ed22a3-674d-41e7-b08e-ec0907eb858f",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "what's my name",
+        "timestamp": "2026-09-27T15:16:33.759395Z"
+      },
+      {
+        "role": "assistant",
+        "content": "My name is Rayen. I’m a working professional looking to move in within the next three to six months, and I’m flexible on location around Ben Arous. Since I’m open to smokers and have a normal sleep schedule, I’m quite adaptable to different living styles. What are your main priorities for a shared room?",
+        "timestamp": "2026-09-27T15:16:33.759412Z"
+      },
+      {
+        "role": "user",
+        "content": "what is my budget",
+        "timestamp": "2026-09-27T15:16:45.798703Z"
+      },
+      {
+        "role": "assistant",
+        "content": "My budget isn't specified in my profile, so I’m flexible and willing to negotiate based on the overall value of the room and location. Since I’m open to smokers and have a normal sleep schedule, I think we’d get along well in terms of lifestyle compatibility. What is your monthly budget for rent?",
+        "timestamp": "2026-09-27T15:16:45.798717Z"
+      },
+      {
+        "role": "user",
+        "content": "cook me a pizza",
+        "timestamp": "2026-09-27T15:17:05.574250Z"
+      },
+      {
+        "role": "assistant",
+        "content": "I’m afraid I can’t cook a pizza for you, but I can definitely share a meal if we find a compatible living situation. Since my profile doesn’t specify strict rules about cooking or cleanliness, I’m open to discussing how we’d handle kitchen usage and chores. Do you have any specific preferences regarding who cooks or how shared spaces are maintained?",
+        "timestamp": "2026-09-27T15:17:05.574260Z"
+      }
+    ],
+    "created_at": "2026-09-27T15:16:33.741389Z",
+    "id": "9ed3a3b8-b049-40c6-b945-319a91119c0f"
   }
 ]
