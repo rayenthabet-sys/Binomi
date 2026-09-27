@@ -1,5 +1,8 @@
 # Binomi
-check out our live demo at: binomi.nekriw.tn
+check out our live demo at: https://binomi.nekriw.tn/
+
+
+
 AI-powered roommate compatibility matching for Tunisia.
 
 ## What Binomi does
